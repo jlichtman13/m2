@@ -1,8 +1,4 @@
-#Ising Model
-fdfdafasdfsdaf
-
-#What the code does
-fsdfdsfsdafasdfdsa
-
-#What the plot means
-fadsfadsfdasfdsaf
+#Midterm 2 project Design, and Implimintations
+The design of this code was largly a tranferrance two a 6 interaction lattice from the code provided of the square (4 interaction)
+lattice. In order to do this the triangle latice was offset slightly.  This allowed for the interaction be dependant on the 6 spins
+rather than the four. This is done in the code itself by adding 2 more terms on line 32 of the metropolis.c c file.  This allows the code to take the 2 extra spins by adding matrix elements s[inext][jprev] and s[iprev][jnext]. This is also done in the ising.c file on line 118 where the "sweeping" occurs. Because this is only sweeping it is only necessary to add a single s[inext][jprev] term in allowing the sweep to catch all of the spin states that we are trying to detect. Due to this is was also necessary to add line 117 in the aforementioned code in order for ising.c to know what jprev meant. Another important change was the chaging of the boltzmann factor in the ising_datastructure.h code on line 16.  The first term of the array is changed to 25 in order to take the 2 extra spin states being looked at into account
